@@ -18,7 +18,7 @@ class SplashScreen extends StatelessWidget{
             Expanded (
               child: CircleAvatar(
                 backgroundImage: AssetImage('assets/img_1.png'),
-                radius: 130,
+                radius: 150,
               ),
             ),
             SizedBox(height: 16),
