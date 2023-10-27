@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/Screens/home_page.dart';
+import 'package:weather_app/Screens/splash_page.dart';
 import 'package:weather_app/cubits/get_weather_cubit/get_weather_cubit.dart';
 import 'package:weather_app/cubits/get_weather_cubit/get_weather_states.dart';
 
@@ -28,7 +29,7 @@ class WeatherApp extends StatelessWidget {
                         .weatherModel?.weatherCondition),
                   ),
                   debugShowCheckedModeBanner: false,
-                  home: const HomePage(),
+                  home:const SplashScreen(),
                 );
               },
             ),
@@ -39,7 +40,7 @@ class WeatherApp extends StatelessWidget {
 
  MaterialColor getThemeColor(String? weatherCondition) {
    if (weatherCondition == null) {
-     return Colors.blue;
+     return Colors.purple;
   }
   switch (weatherCondition) {
     case 'Sunny':
@@ -104,7 +105,7 @@ class WeatherApp extends StatelessWidget {
     case 'Moderate or heavy snow with thunder':
       return Colors.grey;
     default:
-      return Colors.lightBlue;
+      return Colors.purple;
   }
 }
 
