@@ -39,12 +39,16 @@ class HomePage extends StatelessWidget{
           {
             return const NoWeatherBody() ;
           }
-        else if (state is WeatherLoadedState)
+        else if (state is WeatherLoadingState)
+        {
+          return const Center(child: CircularProgressIndicator(),) ;
+        }
+        else if (state is WeatherSuccessState)
             {
               return  WeatherInfoBody(weather: state.weatherModel,) ;
             }
         else{
-          return const Text('Opps, there wan an error , try later ');
+          return const Text('Ops, there wan an error , try again ');
         }
         },
       ) ,
